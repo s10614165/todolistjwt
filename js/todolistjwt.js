@@ -8,11 +8,9 @@ const todonum = document.querySelector('.todonum');
 const cleanbtn = document.querySelector('.cleanfinishbtn');
 const singoutbtn = document.querySelector('.logooutbtn');
 const nickaname = document.querySelector('.login-name')
-console.log(nickaname);
 
 let authorization = localStorage.getItem('authorization');
 let nicname = localStorage.getItem('nickname');
-console.log(nicname);
 
 
 // 登入檢查是否登入狀態
@@ -159,9 +157,14 @@ divtitle.addEventListener("click", function (e) {
   }
 })
 cleanbtn.addEventListener('click', function () {
+  console.log(data);
   data.forEach(function (item) {
-    if (item.Ischeckcd === true) {
-      axios.delete(`https://fathomless-brushlands-42339.herokuapp.com/todo1/${item.id}`, {
+    console.log(item.id);
+    if (item.completed_at != null) {
+      axios.delete(`https://todoo.5xcamp.us/todos/${item.id}`, {
+        headers: {
+          Authorization: `${authorization}`
+        }
       }).then(function () {
 
         init();
