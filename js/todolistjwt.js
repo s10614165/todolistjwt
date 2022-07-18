@@ -182,7 +182,7 @@ singoutbtn.addEventListener('click', () => {
     console.log(res)
     localStorage.removeItem('authorization');
     alert(res.data.message);
-    location.href = '../index.html';
+    location.href = 'index.html';
   })
 })
 

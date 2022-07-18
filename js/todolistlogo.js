@@ -41,7 +41,7 @@ loginbtn.addEventListener("click", () => {
     localStorage.setItem('authorization', authorization)
     localStorage.setItem('nickname', nickaname)
     alert(data.data.message);
-    location.href = '../todolistjwt.html';
+    location.href = 'todolistjwt.html';
 
   }).catch(function (error) {
     // 失敗會回傳的內容
